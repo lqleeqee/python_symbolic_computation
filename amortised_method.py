@@ -7,19 +7,9 @@ import os
 import sys
 from sympy import Function,symbols,Symbol,solve
 
-def alc(total,num,rembursement):
-	#total:总(贷款)额
-	#num:还款期数(月)
-	#rembursement：每一期还款
-	pass
-	#返回年利率
-	return rate
-
-def remain(total,rete,rembursement):
-	#知道利率和每一期还款，计算仍欠款数
-	return total*(1+rate)-rembursement
-
-
+#摊余法计算贷款年利率
+#贷款五万，24个月等额本息每月2400元。
+#计算年利率
 def sys_cla(A,r,X):
 	#A,r,X = symbols('A,r,X')
 	return A*(1+r)-X
@@ -29,9 +19,6 @@ def iteration(A,r,X,n):
 	for i in range(n):
 		A = sys_cla(A,r,X)
 	return A
-
-
-
 
 if __name__ == '__main__':
 	A,r,X = symbols('A,r,X')

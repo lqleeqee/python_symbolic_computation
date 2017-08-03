@@ -7,6 +7,10 @@
 import os,sys
 from sympy import Function,symbols,Symbol,solve,simplify,expand,ratsimp
 
+
+#年金法计算贷款的年利率
+#贷款五万，24个月等额本息每月2400元。
+#计算年利率
 def polynomial(a,p,n):
 	return a*(1+p)**(-(n+1))
 
@@ -24,6 +28,7 @@ if __name__ == '__main__':
 	# print(simplify(S))
 	# print(expand(S))
 	# print(ratsimp(S))
+	#p = Symbol('p',positive=True)
 	resu = solve(S,p)
 	print(resu)
 	resu = [i for i in resu if not ("I" in str(i)) and not ("-" in str(i))]
