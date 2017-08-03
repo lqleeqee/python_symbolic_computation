@@ -46,5 +46,10 @@ print('imaginary part of exp(I*x)={0}'.format(im(tmp)))
 #taylor expansion of sin(x)=x - x**3/6 + x**5/120 - x**7/5040 + x**9/362880 + O(x**10)
 print('taylor expansion of sin(x)={0}'.format(series(sin(x),x,0,10)))
 
-# print('real:re(series(exp(I*x),x,0,10))=series(cos(x),x,0,10))?\n{0}'.format((series(cos(x),x,0,10)).equals(re(tmp))))
-# print('imag:im(series(exp(I*x),x,0,10))=series(sin(x),x,0,10))?\n{0}'.format(im(tmp)==series(sin(x),x,0,10)))
+co = series(cos(x),x,0,10)
+rea = re(tmp)-re(O(x**10))+O(x**10)
+print('real:re(series(exp(I*x),x,0,10))=series(cos(x),x,0,10))?\n{0}'.format(co==rea))
+
+si = series(sin(x),x,0,10)
+img = im(tmp)-im(O(x**10))+O(x**10)
+print('imag:im(series(exp(I*x),x,0,10))=series(sin(x),x,0,10))?\n{0}'.format(si==img))
