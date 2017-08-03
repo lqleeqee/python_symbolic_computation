@@ -21,11 +21,11 @@ def iteration(a,p,n,F):
 if __name__ == '__main__':
 	a,p,n,F = symbols('a,p,n,F')
 	S = iteration(a,p,24,F).subs([(a,2400.0),(F,50000.0)])
-	print(simplify(S))
-	print(expand(S))
-	print(ratsimp(S))
-	# resu = solve(S,p)
-	# print(resu)
-	# resu = [i for i in resu if not ("I" in str(i)) and not ("-" in str(i))]
-	# rate = resu[0]
-	# print(rate*12.0)
+	# print(simplify(S))
+	# print(expand(S))
+	# print(ratsimp(S))
+	resu = solve(S,p)
+	print(resu)
+	resu = [i for i in resu if not ("I" in str(i)) and not ("-" in str(i))]
+	rate = resu[0]
+	print(rate*12.0)
