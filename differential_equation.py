@@ -39,3 +39,5 @@ print(eq_1.rhs) #-C1/(C1 - exp(x))
 #为了验证eq_0,eq_1两个等式是完全等价的，只需将 eq_1带入eq_0中进行简化即可。
 t = simplify(eq_0.lhs.subs(f(x),eq_1.rhs))
 print(t)
+
+print(eq_1 == eq_0) #True
